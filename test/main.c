@@ -48,7 +48,9 @@ int aufgabe3() {
 
     for (int i = 1; i <= n; i++ ) {
         r = r * i;
-    } return r;
+    }
+    printf("%d", r);
+    return r;
 }
 
 struct Orte {

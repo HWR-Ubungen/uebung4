@@ -179,6 +179,125 @@ int anmeldung(){
     return 0;
 }
 
+int geschwindigkeit() {
+    char auswahl;
+    float speed;
+    printf("Was wollen sie umrechnen?\n");
+    printf("(a) km/h in mph\n");
+    printf("(b) mph in km/h\n");
+    scanf("%s", &auswahl);
+    printf("Geschwindigkeit eingeben!\n");
+    scanf("%f", &speed);
+
+    switch (auswahl)
+    {
+        case 'a':
+            printf("Die Geschwindigkeit entspricht %f mph.\n", (speed*0.621371f));
+            break;
+        case 'b':
+            printf("Die Geschwindigkeit entspricht %f km/h.\n", (speed*1.60934f));
+            break;
+        default:
+            printf("Keine gueltige Eingabe!\n");
+    }
+    return 0;
+}
+
+int temperatur() {
+    char auswahl;
+    float temp;
+    printf("Was wollen sie umrechnen?\n");
+    printf("(a) Grad C\n");
+    printf("(b) Grad F\n");
+    printf("(c) K\n");
+    scanf("%s", &auswahl);
+    printf("Temperatur eingeben!\n");
+    scanf("%f", &temp);
+
+    switch (auswahl)
+    {
+        case 'a':
+            printf("Die Temperatur entspricht %f Grad F.\n", (temp*1.8f+32.0f));
+            printf("Die Temperatur entspricht %f K.\n", (temp+273.15f));
+            break;
+        case 'b':
+            printf("Die Temperatur entspricht %f Grad C.\n", ((temp-32.0f)*(0.55555555f)));
+            printf("Die Temperatur entspricht %f K.\n", ((temp-32.0f)*(0.55555555f)+273.15f));
+            break;
+        case 'c':
+            printf("Die Temperatur entspricht %f Grad C.\n", (temp-273.15f));
+            printf("Die Temperatur entspricht %f Grad F.\n", ((temp-273.15f)*1.8f+32.0f));
+            break;
+        default:
+            printf("Keine gueltige Eingabe!");
+    }
+    return 0;
+}
+
+int byte() {
+    char auswahl;
+    float b;
+    printf("Was wollen sie umrechnen?\n");
+    printf("(a) B\n");
+    printf("(b) KB\n");
+    printf("(c) MB\n");
+    printf("(d) GB\n");
+    scanf("%s", &auswahl);
+    printf("Giga-/Mega-/Kilo-/Bytes eingeben!\n");
+    scanf("%f", &b);
+
+    switch (auswahl)
+    {
+        case 'a':
+            printf("Die Bytes entsprechen %f KB.\n", (b/1024.0f));
+            printf("Die Bytes entsprechen %f MB.\n", (b/1048576.0f));
+            printf("Die Bytes entsprechen %f GB.\n", (b/1073741824.0f));
+            break;
+        case 'b':
+            printf("Die KB entsprechen %f B.\n", (b*1024.0f));
+            printf("Die KB entsprechen %f MB.\n", (b/1024.0f));
+            printf("Die KB entsprechen %f GB.\n", (b/1048576.0f));
+            break;
+        case 'c':
+            printf("Die MB entsprechen %f B.\n", (b*1048576.0f));
+            printf("Die MB entsprechen %f KB.\n", (b*1024.0f));
+            printf("Die MB entsprechen %f GB.\n", (b/1024.0f));
+            break;
+        case 'd':
+            printf("Die GB entsprechen %f B.\n", (b*1073741824.0f));
+            printf("Die GB entsprechen %f KB.\n", (b*1048576.0f));
+            printf("Die GB entsprechen %f MB.\n", (b*1024.0f));
+            break;
+        default:
+            printf("Keine gueltige Eingabe!");
+    }
+    return 0;
+}
+
+int aufgabe6() {
+    char auswahl;
+    printf("Was wollen sie umrechnen?\n");
+    printf("(a) km/h <-> mph\n");
+    printf("(b) Grad C <-> Grad F <-> K\n");
+    printf("(c) B <-> KB <-> MB <-> GB\n");
+    scanf("%c", &auswahl);
+
+    switch (auswahl)
+    {
+        case 'a':
+            geschwindigkeit();
+            break;
+        case 'b':
+            temperatur();
+            break;
+        case 'c':
+            byte();
+            break;
+        default:
+            printf("Keine gueltige Eingabe!");
+    }
+}
+
 int main(){
     //aufgabe1();
     //aufgabe2();
